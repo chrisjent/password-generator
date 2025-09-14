@@ -21,9 +21,16 @@ let passwordMessage = document.getElementById("passwordMessage")
 let passwordEl = document.getElementById("password")
 
 const generatePasswordButton = document.getElementById("generatePasswordBtn")
+const clearPasswordsButton = document.getElementById("clearPasswordsBtn")
+const copyPasswordOneButton = document.getElementById("copyPasswordOne")
+const copyPasswordTwoButton = document.getElementById("copyPasswordTwo")
+
+clearPasswordsButton.addEventListener("click", clearPasswords)
+copyPasswordOneButton.addEventListener("click", copyPasswordOne)
+copyPasswordTwoButton.addEventListener("click", copyPasswordTwo)
 
 
-function randomPassword() {
+function generatePasswords() {
     passwordMessage.textContent = " "
     let passwordOne = " "
     let passwordTwo = " "
@@ -73,7 +80,7 @@ function randomPassword() {
 }
 }
 
-generatePasswordButton.addEventListener("click", randomPassword)
+generatePasswordButton.addEventListener("click", generatePasswords)
 
 function copyPasswordOne() {
    if (passwordOneEl.textContent === "") {
@@ -101,3 +108,4 @@ function clearPasswords() {
     passwordMessage.textContent = "Passwords cleared!"
 }
 
+clearPasswordsButton.addEventListener("click", clearPasswords)
