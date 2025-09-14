@@ -11,7 +11,7 @@ body {
   
   background-color: #121820;
   width: 700px;
-  height: 550px;
+  height: 600px;
   margin: 0 auto;
   padding: 20px 0px;
   border-radius: 20px;
@@ -94,6 +94,11 @@ button {
     font-size: 18px;
     margin: 10px;
     /* transition: .3s; */
+}
+
+.small-btn {
+  font-size: 14px;
+  margin: 0 0 20px;
 }
 
 .copy-btn {

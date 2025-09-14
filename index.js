@@ -71,7 +71,7 @@ function randomPassword() {
 }
 
 function copyPasswordOne() {
-   if (passwordTwoEl.textContent === "") {
+   if (passwordOneEl.textContent === "") {
             passwordMessage.textContent = "There is no password to copy!"
         } else {
         let copyText = document.getElementById("passwordOne").textContent;
@@ -88,6 +88,11 @@ function copyPasswordTwo() {
         navigator.clipboard.writeText(copyText);  
         passwordMessage.textContent = copyText + " has been copied to the clipboard!";
         }
-      
     }
+
+function clearPasswords() {
+    passwordOneEl.textContent = ""
+    passwordTwoEl.textContent = ""
+    passwordMessage.textContent = "Passwords cleared!"
+}
 
