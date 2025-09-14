@@ -20,6 +20,9 @@ let symbolsEL = document.getElementById("symbolsSwitch")
 let passwordMessage = document.getElementById("passwordMessage")
 let passwordEl = document.getElementById("password")
 
+const generatePasswordButton = document.getElementById("generatePasswordBtn")
+
+
 function randomPassword() {
     passwordMessage.textContent = " "
     let passwordOne = " "
@@ -69,6 +72,8 @@ function randomPassword() {
     passwordTwoEl.textContent = passwordTwo
 }
 }
+
+generatePasswordButton.addEventListener("click", randomPassword)
 
 function copyPasswordOne() {
    if (passwordOneEl.textContent === "") {
