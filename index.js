@@ -71,22 +71,23 @@ function randomPassword() {
 }
 
 function copyPasswordOne() {
-    passwordMessage.textContent = ""
-    let copyText = document.getElementById("passwordOne").textContent;
-    navigator.clipboard.writeText(copyText);
-    let passwordEl = document.getElementById("password");
-    return passwordEl.textContent = 12
-    //passwordMessage.textContent = copyText + " has been copied to the clipboard!"
-    //password.textContent = "hi";
+   if (passwordTwoEl.textContent === "") {
+            passwordMessage.textContent = "There is no password to copy!"
+        } else {
+        let copyText = document.getElementById("passwordOne").textContent;
+        navigator.clipboard.writeText(copyText);  
+        passwordMessage.textContent = copyText + " has been copied to the clipboard!";
+        }
 }
 
 function copyPasswordTwo() {
-    if (passwordTwoEl.textContent === "") {
-         passwordMessage.textContent = "Please generate a password first!"
-    } else {
+        if (passwordTwoEl.textContent === "") {
+            passwordMessage.textContent = "There is no password to copy!"
+        } else {
         let copyText = document.getElementById("passwordTwo").textContent;
-        copyText.style.cssText = 'background-color: green; border: 1px solid black;';
         navigator.clipboard.writeText(copyText);  
         passwordMessage.textContent = copyText + " has been copied to the clipboard!";
+        }
+      
     }
-}
+
