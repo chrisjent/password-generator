@@ -98,8 +98,10 @@ function copyPasswordTwo() {
             passwordMessage.textContent = "There is no password to copy!"
         } else {
         let copyText = document.getElementById("passwordTwo").textContent;
-        navigator.clipboard.writeText(copyText);  
+        let passwordEl = document.getElementById("password")
+        passwordEl.textContent = copyText;
         passwordMessage.textContent = copyText + " has been copied to the clipboard!";
+        navigator.clipboard.writeText(copyText);  
         }
     }
 
