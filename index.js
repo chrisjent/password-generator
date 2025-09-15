@@ -25,6 +25,7 @@ const clearPasswordsButton = document.getElementById("clearPasswordsBtn")
 const copyPasswordOneButton = document.getElementById("copyPasswordOne")
 const copyPasswordTwoButton = document.getElementById("copyPasswordTwo")
 
+        
 clearPasswordsButton.addEventListener("click", clearPasswords)
 copyPasswordOneButton.addEventListener("click", copyPasswordOne)
 copyPasswordTwoButton.addEventListener("click", copyPasswordTwo)
