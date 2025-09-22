@@ -34,7 +34,6 @@ copyPasswordTwoButton.addEventListener("click", copyPasswordTwo)
 
 
 function generatePasswords() {
-    passwordCleared.textContent= " "
     messageDiv.innerHTML = " "
     let passwordOne = " "
     let passwordTwo = " "
