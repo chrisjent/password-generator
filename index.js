@@ -19,11 +19,13 @@ let numbersEL = document.getElementById("numbersSwitch")
 let symbolsEL = document.getElementById("symbolsSwitch")
 let passwordMessage = document.getElementById("passwordMessage")
 let passwordEl = document.getElementById("password")
+let passwordCleared = document.getElementById("passwordCleared")
 
 const generatePasswordButton = document.getElementById("generatePasswordBtn")
 const clearPasswordsButton = document.getElementById("clearPasswordsBtn")
 const copyPasswordOneButton = document.getElementById("copyPasswordOne")
 const copyPasswordTwoButton = document.getElementById("copyPasswordTwo")
+const messageDiv = document.getElementById("messageDiv")
 
         
 clearPasswordsButton.addEventListener("click", clearPasswords)
@@ -32,7 +34,8 @@ copyPasswordTwoButton.addEventListener("click", copyPasswordTwo)
 
 
 function generatePasswords() {
-    passwordMessage.textContent = " "
+    passwordCleared.textContent= " "
+    messageDiv.innerHTML = " "
     let passwordOne = " "
     let passwordTwo = " "
     if (numbersEL.checked===true && symbolsEL.checked===false) {
@@ -85,30 +88,29 @@ generatePasswordButton.addEventListener("click", generatePasswords)
 
 function copyPasswordOne() {
    if (passwordOneEl.textContent === "") {
-            passwordMessage.textContent = "There is no password to copy!"
+             messageDiv.innerHTML = "<span class='password-message'>There is no password to copy!</span>"  
         } else {
         let copyText = document.getElementById("passwordOne").textContent;
         navigator.clipboard.writeText(copyText);  
-        passwordMessage.textContent = copyText + " has been copied to the clipboard!";
+       // let passwordSpan = document.getElementById("passwordSpan")
+        messageDiv.innerHTML =`<span class="id-span">${copyText}</span><span class='password-message'>has been copied to the clipboard!</span>`
         }
 }
 
 function copyPasswordTwo() {
-        if (passwordTwoEl.textContent === "") {
-            passwordMessage.textContent = "There is no password to copy!"
+         if (passwordTwoEl.textContent === "") {
+            messageDiv.innerHTML = "<span class='password-message'>There is no password to copy!</span>"            
         } else {
-        let copyText = document.getElementById("passwordTwo").textContent;
-        let passwordEl = document.getElementById("password")
-        passwordEl.textContent = copyText;
-        passwordMessage.textContent = copyText + " has been copied to the clipboard!";
-        navigator.clipboard.writeText(copyText);  
+        let copyText = document.getElementById("passwordTwo").textContent
+        navigator.clipboard.writeText(copyText)
+        //let passwordSpan = document.getElementById("passwordSpan")
+        messageDiv.innerHTML =`<span class="id-span">${copyText}</span><span class='password-message'>has been copied to the clipboard!</span>`
         }
-    }
-
+}
 function clearPasswords() {
     passwordOneEl.textContent = ""
     passwordTwoEl.textContent = ""
-    passwordMessage.textContent = "Passwords cleared!"
+    messageDiv.innerHTML = "<span class='password-message'>Passwords cleared.</span>"
 }
 
 clearPasswordsButton.addEventListener("click", clearPasswords)
